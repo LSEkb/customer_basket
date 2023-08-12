@@ -20,14 +20,14 @@ public class OrderController {
     }
 
     @GetMapping(path = "/add")
-    public String addProducts(@RequestParam Map<Integer,Integer> products) {
+    public String addProducts(@RequestParam Map<String,String> products) {
         basketService.addProduct(products);
         System.out.println(products);
         return "Товары успешно добавлены";
     }
 
     @GetMapping(path = "/get")
-    public Set<Integer> getProducts() {
+    public Set<String> getProducts() {
         return basketService.getProducts();
     }
 }

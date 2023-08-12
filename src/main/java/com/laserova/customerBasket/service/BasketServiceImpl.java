@@ -14,14 +14,14 @@ public class BasketServiceImpl implements BasketService {
     }
 
     @Override
-    public void addProduct(Map<Integer,Integer> products) {
+    public void addProduct(Map<String,String> products) {
 
         products.entrySet().stream().forEach(p -> basket.addToBasket(p.getKey(), p.getValue()));
         System.out.println("service");
     }
 
     @Override
-    public Set<Integer> getProducts() {
+    public Set<String> getProducts() {
         return basket.getFromBasket();
     }
 }

@@ -8,18 +8,18 @@ import java.util.*;
 @SessionScope
 public class Basket {
 
-    private Map<Integer, Integer> order;
+    private Map<String, String> order;
 
     public Basket() {
         order = new HashMap<>();
     }
 
-    public void addToBasket(Integer productsId, Integer quantity) {
+    public void addToBasket(String productsId, String quantity) {
         order.put(productsId, quantity);
         System.out.println("basket");
     }
 
-    public Set<Integer> getFromBasket() {
+    public Set<String> getFromBasket() {
         return order.keySet();
     }
 

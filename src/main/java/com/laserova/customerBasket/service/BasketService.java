@@ -4,6 +4,6 @@ import java.util.Map;
 import java.util.Set;
 
 public interface BasketService {
-    void addProduct(Map<Integer,Integer> hashMap);
-    Set<Integer> getProducts();
+    void addProduct(Map<String,String> hashMap);
+    Set<String> getProducts();
 }
