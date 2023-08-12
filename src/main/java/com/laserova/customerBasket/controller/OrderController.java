@@ -22,7 +22,6 @@ public class OrderController {
     @GetMapping(path = "/add")
     public String addProducts(@RequestParam Map<String,String> products) {
         basketService.addProduct(products);
-        System.out.println(products);
         return "Товары успешно добавлены";
     }
 

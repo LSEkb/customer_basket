@@ -15,9 +15,7 @@ public class BasketServiceImpl implements BasketService {
 
     @Override
     public void addProduct(Map<String,String> products) {
-
         products.entrySet().stream().forEach(p -> basket.addToBasket(p.getKey(), p.getValue()));
-        System.out.println("service");
     }
 
     @Override
