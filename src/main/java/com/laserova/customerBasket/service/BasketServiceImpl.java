@@ -5,9 +5,8 @@ import org.springframework.stereotype.Service;
 import java.util.Map;
 import java.util.Set;
 
-
 @Service
-public class BasketServiceImpl implements BasketService{
+public class BasketServiceImpl implements BasketService {
     private final Basket basket;
 
     public BasketServiceImpl(Basket basket) {
@@ -16,7 +15,9 @@ public class BasketServiceImpl implements BasketService{
 
     @Override
     public void addProduct(Map<Integer,Integer> products) {
+
         products.entrySet().stream().forEach(p -> basket.addToBasket(p.getKey(), p.getValue()));
+        System.out.println("service");
     }
 
     @Override

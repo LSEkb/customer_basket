@@ -1,17 +1,16 @@
 package com.laserova.customerBasket.controller;
 
-import com.laserova.customerBasket.service.Basket;
 import com.laserova.customerBasket.service.BasketService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 @RestController
-@RequestMapping(path ="/order")
+@RequestMapping(path = "/order")
 public class OrderController {
 
     private BasketService basketService;
@@ -21,8 +20,9 @@ public class OrderController {
     }
 
     @GetMapping(path = "/add")
-    public String addProducts(Map<Integer,Integer> products) {
+    public String addProducts(@RequestParam Map<Integer,Integer> products) {
         basketService.addProduct(products);
+        System.out.println(products);
         return "Товары успешно добавлены";
     }
 

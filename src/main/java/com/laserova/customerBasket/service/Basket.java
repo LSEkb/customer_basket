@@ -2,34 +2,28 @@ package com.laserova.customerBasket.service;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
-
 import java.util.*;
 
 @Component
 @SessionScope
 public class Basket {
-    private Map<Integer, Integer> basket;
 
-    public Basket(Integer productsId, Integer quantity) {
-        this.basket = new HashMap<>();
+    private Map<Integer, Integer> order;
+
+    public Basket() {
+        order = new HashMap<>();
     }
 
-    public void addToBasket (Integer productsId, Integer quantity){
-        basket.put(productsId,quantity);
+    public void addToBasket(Integer productsId, Integer quantity) {
+        order.put(productsId, quantity);
+        System.out.println("basket");
     }
 
-    public Set<Integer> getFromBasket(){
-        return basket.keySet();
+    public Set<Integer> getFromBasket() {
+        return order.keySet();
     }
 
-//    public int getProductId() {
-//        return productId;
-//    }
-//
-//    public int getQuantity() {
-//        return quantity;
-//    }
-//
+
 //    @Override
 //    public int hashCode() {
 //        return Objects.hash(productId);
